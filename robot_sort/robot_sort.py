@@ -93,19 +93,15 @@ class SortingRobot:
         return self._light == "ON"
 
     def sort(self):
-        """
-        while robot moves right, compare item is -1 then swap and move right
-        else left
-        while robort moves left, compare item is 1 swap and move left
-        else move left
-        """
         # Fill this out
         while self.can_move_right():
+            # while there is room to the right, check if item is less value, if true grab it and move right, else just move right
             if self.compare_item() == -1 or self.compare_item() is None:
                 self.swap_item()
                 self.move_right()
             else:
                 self.move_right()
+            # while there is room to the left,check if item has greater value, if so, grab it and move left, else just go left young man
         while self.can_move_left():
             if self.compare_item() == 1:
                 self.swap_item()
